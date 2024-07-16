@@ -60,7 +60,7 @@ await m.reply(`${fg}\`\`\`NO SE LOGRÓ CAMBIAR DE IDIOMA, REPORTE ESTE COMANDO $
 console.log(e) 
 }}
 
-handler.command = /^(idioma|languaje|idiomas|languajes|languages)$/i
+handler.command = /^(язык|languaje|idiomas|languajes|languages)$/i
 handler.owner = true
 
 export default handler

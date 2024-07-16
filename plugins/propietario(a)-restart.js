@@ -11,7 +11,7 @@ await conn.sendMessage(m.chat, {text: `𝙍𝙚𝙞𝙣𝙞𝙘𝙞𝙖𝙧 | �
 process.send('reset')}
 handler.help = ['restart'] 
 handler.tags = ['owner']
-handler.command = ['restart','reiniciar'] 
+handler.command = ['рестарт','reiniciar'] 
 handler.rowner = true
 export default handler
 
