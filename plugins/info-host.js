@@ -55,7 +55,7 @@ ${canal1}
 
 🗣📲 *Contacto:*
 • https://www.facebook.com/elrebelde21
-• wa.me/573147616444
+• wa.me/+79011033947
 
 No esperes más y lleva tu bot al siguiente nivel con nuestro servicio de alojamiento. ¡Es fácil, rápido y económico! 💪🚀` 
 

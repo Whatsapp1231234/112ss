@@ -182,7 +182,7 @@ const connectionOptions = {
 logger: pino({ level: 'silent' }),
 printQRInTerminal: opcion == '1' ? true : methodCodeQR ? true : false,
 mobile: MethodMobile, 
-browser: opcion == '1' ? ['GataBot-MD', 'Edge', '2.0.0'] : methodCodeQR ? ['GataBot-MD', 'Edge', '2.0.0'] : ['Ubuntu', 'Edge', '110.0.1587.56'],
+browser: opcion == '1' ? ['112ss', 'Edge', '2.0.0'] : methodCodeQR ? ['112ss', 'Edge', '2.0.0'] : ['Ubuntu', 'Edge', '110.0.1587.56'],
 auth: {
 creds: state.creds,
 keys: makeCacheableSignalKeyStore(state.keys, Pino({ level: "fatal" }).child({ level: "fatal" })),
@@ -303,7 +303,7 @@ return await connectionUpdate(authFile);
 });
 const bots = await Promise.all(botPromises);
 global.conns = bots.filter(Boolean);
-console.log(chalk.bold.greenBright(`✅ TODOS LOS SUB-BOTS SE HAN INICIADO CORRECTAMENTE`))
+console.log(chalk.bold.greenBright(`✅ ВСЕ СУБ-БОТЫ УСПЕШНО ЗАПУЩЕНЫ`))
 }
 (async () => {
 global.conns = [];
@@ -311,10 +311,10 @@ const mainBotAuthFile = 'GataBotSession';
 try {
 const mainBot = await connectionUpdate(mainBotAuthFile);
 global.conns.push(mainBot);
-console.log(chalk.bold.greenBright(`✅ BOT PRINCIPAL INICIANDO CORRECTAMENTE`))
+console.log(chalk.bold.greenBright(`✅ ОСНОВНОЙ БОТ УСПЕШНО ЗАПУСКАЕТСЯ`))
 await connectSubBots();
 } catch (error) {
-console.error(chalk.bold.cyanBright(`❌ OCURRIÓ UN ERROR AL INICIAR EL BOT PRINCIPAL: `, error))
+console.error(chalk.bold.cyanBright(`❌ ПРОИЗОШЛА ОШИБКА ПРИ ЗАПУСКЕ ОСНОВНОГО БОТА: `, error))
 }
 })();
 
