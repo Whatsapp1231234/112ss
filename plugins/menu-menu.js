@@ -17,43 +17,43 @@ let user = global.db.data.users[m.sender]
 let bot = global.db.data.settings[conn.user.jid] || {}
 
 const commandsConfig = [
-{ comando: (bot.restrict ? 'выкл ' : 'вкл ') + 'ограничить', descripcion: bot.restrict ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Разрешения для бота', showPrefix: true },
-{ comando: (bot.antiCall ? 'выкл ' : 'вкл') + 'антизвонок', descripcion: bot.antiCall ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Избегать приема звонков в боте', showPrefix: true },
-{ comando: (bot.temporal ? 'выкл ' : 'вкл ') + 'время', descripcion: bot.temporal ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Временное включение бота в группы', showPrefix: true },
-{ comando: (bot.jadibotmd ? 'выкл ' : 'вкл ') + 'serbot', descripcion: bot.jadibotmd ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Разрешать или запрещать субботов на этом боте', showPrefix: true },
-{ comando: (bot.antiSpam ? 'выкл ' : 'вкл ') + 'антиспам', descripcion: bot.antiSpam ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Дать предупреждение за рассылку спама', showPrefix: true },
-{ comando: (bot.antiSpam2 ? 'выкл ' : 'вкл ') + 'антиспам2', descripcion: bot.antiSpam2 ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Пропустить результат последовательных команд', showPrefix: true },
-{ comando: (bot.antiPrivate ? 'выкл ' : 'вкл ') + 'антиличка', descripcion: bot.antiPrivate ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Запрещает использование этого бота в частном порядке', showPrefix: true },
-{ comando: (global.opts['авточтение'] ? 'выкл ' : 'вкл ') + 'авточтение', descripcion: global.opts['autoread'] ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Автоматически прочитанные сообщения', showPrefix: true },
-{ comando: (global.opts['gconly'] ? 'выкл ' : 'вкл ') + 'толькогруппы', descripcion: global.opts['gconly'] ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Заставить его работать только в группах', showPrefix: true },
-{ comando: (global.opts['pconly'] ? 'выкл ' : 'вкл ') + 'тольколичка', descripcion: global.opts['pconly'] ? '✅ ' + 'включить' : '❌ ' + 'выключить', contexto: 'Заставить его работать только на частных', showPrefix: true },
+{ comando: (bot.restrict ? 'выкл ' : 'вкл ') + 'ограничить', descripcion: bot.restrict ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Разрешения для бота', showPrefix: true },
+{ comando: (bot.antiCall ? 'выкл ' : 'вкл') + 'антизвонок', descripcion: bot.antiCall ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Избегать приема звонков в боте', showPrefix: true },
+{ comando: (bot.temporal ? 'выкл ' : 'вкл ') + 'время', descripcion: bot.temporal ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Временное включение бота в группы', showPrefix: true },
+{ comando: (bot.jadibotmd ? 'выкл ' : 'вкл ') + 'serbot', descripcion: bot.jadibotmd ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Разрешать или запрещать субботов на этом боте', showPrefix: true },
+{ comando: (bot.antiSpam ? 'выкл ' : 'вкл ') + 'антиспам', descripcion: bot.antiSpam ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Дать предупреждение за рассылку спама', showPrefix: true },
+{ comando: (bot.antiSpam2 ? 'выкл ' : 'вкл ') + 'антиспам2', descripcion: bot.antiSpam2 ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Пропустить результат последовательных команд', showPrefix: true },
+{ comando: (bot.antiPrivate ? 'выкл ' : 'вкл ') + 'антиличка', descripcion: bot.antiPrivate ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Запрещает использование этого бота в частном порядке', showPrefix: true },
+{ comando: (global.opts['авточтение'] ? 'выкл ' : 'вкл ') + 'авточтение', descripcion: global.opts['autoread'] ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Автоматически прочитанные сообщения', showPrefix: true },
+{ comando: (global.opts['gconly'] ? 'выкл ' : 'вкл ') + 'толькогруппы', descripcion: global.opts['gconly'] ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Заставить его работать только в группах', showPrefix: true },
+{ comando: (global.opts['pconly'] ? 'выкл ' : 'вкл ') + 'тольколичка', descripcion: global.opts['pconly'] ? '✅ ' + 'включена' : '❌ ' + 'выключена', contexto: 'Заставить его работать только на частных', showPrefix: true },
  
-{ comando: m.isGroup ? (chat.welcome ? 'выкл ' : 'вкл ') + 'welcome' : false, descripcion: m.isGroup ? (chat.welcome ? '✅ ' + 'включить' : '❌ ' + 'выключить') : false, contexto: 'Establecer bienvenida en grupos', showPrefix: true },
-{ comando: m.isGroup ? (chat.detect  ? 'выкл ' : 'вкл ') + 'detect' : false, descripcion: m.isGroup ? (chat.detect  ? '✅ ' + 'включить' : '❌ ' + 'выключить') : false, contexto: 'Avisos importantes en grupos', showPrefix: true },
-{ comando: m.isGroup ? (chat.autolevelup  ? 'выкл ' : 'вкл ') + 'autolevelup' : false, descripcion: m.isGroup ? (chat.autolevelup  ? '✅ ' + 'включить' : '❌ ' + 'выключить') : false, contexto: 'Subir de nivel automáticamente', showPrefix: true },
-{ comando: m.isGroup ? (chat.modoadmin  ? 'выкл ' : 'вкл ') + 'modeadmin' : false, descripcion: m.isGroup ? (chat.modoadmin  ? '✅ ' + 'включить' : '❌ ' + 'выключить') : false, contexto: 'Sólo admins podrán usar en grupo', showPrefix: true },
+{ comando: m.isGroup ? (chat.welcome ? 'выкл ' : 'вкл ') + 'приветствие' : false, descripcion: m.isGroup ? (chat.welcome ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Установить приветствие в группах', showPrefix: true },
+{ comando: m.isGroup ? (chat.detect  ? 'выкл ' : 'вкл ') + 'detect' : false, descripcion: m.isGroup ? (chat.detect  ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Важные уведомления в группах', showPrefix: true },
+{ comando: m.isGroup ? (chat.autolevelup  ? 'выкл ' : 'вкл ') + 'autolevelup' : false, descripcion: m.isGroup ? (chat.autolevelup  ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Автоматическое повышение уровня', showPrefix: true },
+{ comando: m.isGroup ? (chat.modoadmin  ? 'выкл ' : 'вкл ') + 'modeadmin' : false, descripcion: m.isGroup ? (chat.modoadmin  ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Только администраторы могут использовать в группе', showPrefix: true },
 
-{ comando: m.isGroup ? (chat.stickers ? 'off ' : 'on ') + 'stickers' : false, descripcion: m.isGroup ? (chat.stickers ? '✅ ' + 'включить' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Stickers automáticos en chats', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.autosticker ? 'off ' : 'on ') + 'autosticker' : false, descripcion: m.isGroup ? (chat.autosticker ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Multimedia a stickers automáticamente', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.reaction ? 'off ' : 'on ') + 'reacciones , reaction' : false, descripcion: m.isGroup ? (chat.reaction ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Reaccionar a mensajes automáticamente', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.audios ? 'off ' : 'on ') + 'audios' : false, descripcion: m.isGroup ? (chat.audios ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Audios automáticos en chats', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.modohorny ? 'off ' : 'on ') + 'modocaliente , modehorny' : false, descripcion: m.isGroup ? (chat.modohorny ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Comandos con contenido para adultos', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.antitoxic ? 'off ' : 'on ') + 'antitoxicos , antitoxic' : false, descripcion: m.isGroup ? (chat.antitoxic ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Sancionar/eliminar a usuarios tóxicos', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiver ? 'off ' : 'on ') + 'antiver , antiviewonce' : false, descripcion: m.isGroup ? (chat.antiver ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: ' No acultar mensajes de \"una sola vez\"', showPrefix: true }, 
-{ comando: m.isGroup ? (chat.delete ? 'off ' : 'on ') + 'antieliminar , antidelete' : false, descripcion: m.isGroup ? (chat.delete ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Mostrar mensajes eliminados', showPrefix: true },
-{ comando: m.isGroup ? (chat.antifake ? 'off ' : 'on ') + 'antifalsos , antifake' : false, descripcion: m.isGroup ? (chat.antifake ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar usuarios falsos/extranjeros', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiTraba ? 'off ' : 'on ') + 'antitrabas , antilag' : false, descripcion: m.isGroup ? (chat.antiTraba ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Enviar mensaje automático en caso de lag', showPrefix: true },
-{ comando: m.isGroup ? (chat.simi ? 'off ' : 'on ') + 'simi' : false, descripcion: m.isGroup ? (chat.simi ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'SimSimi responderá automáticamente', showPrefix: true },
-{ comando: m.isGroup ? (chat.modoia ? 'off ' : 'on ') + 'ia' : false, descripcion: m.isGroup ? (chat.modoia ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Inteligencia artificial automática', showPrefix: true },
+{ comando: m.isGroup ? (chat.stickers ? 'выкл' : 'вкл ') + 'stickers' : false, descripcion: m.isGroup ? (chat.stickers ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Автоматические стикеры в чатах', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.autosticker ? 'выкл ' : 'вкл ') + 'autosticker' : false, descripcion: m.isGroup ? (chat.autosticker ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Мультимедиа в стикеры автоматически', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.reaction ? 'выкл ' : 'вкл ') + 'reacciones , reaction' : false, descripcion: m.isGroup ? (chat.reaction ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Автоматически реагировать на сообщения', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.audios ? 'выкл ' : 'вкл ') + 'audios' : false, descripcion: m.isGroup ? (chat.audios ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Автоматическое воспроизведение звука в чатах', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.modohorny ? 'выкл ' : 'вкл ') + 'modocaliente , modehorny' : false, descripcion: m.isGroup ? (chat.modohorny ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Команды с контентом для взрослых', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.antitoxic ? 'выкл ' : 'вкл ') + 'antitoxicos , antitoxic' : false, descripcion: m.isGroup ? (chat.antitoxic ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Наказывать / удалять токсичных пользователей', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiver ? 'выкл ' : 'вкл ') + 'antiver , antiviewonce' : false, descripcion: m.isGroup ? (chat.antiver ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: ' Не сжимать \"одноразовые сообщения\"', showPrefix: true }, 
+{ comando: m.isGroup ? (chat.delete ? 'выкл ' : 'вкл ') + 'antieliminar , antidelete' : false, descripcion: m.isGroup ? (chat.delete ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Показывать удаленные сообщения', showPrefix: true },
+{ comando: m.isGroup ? (chat.antifake ? 'выкл ' : 'вкл ') + 'antifalsos , antifake' : false, descripcion: m.isGroup ? (chat.antifake ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Удалить поддельных/иностранных пользователей', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiTraba ? 'выкл ' : 'вкл ') + 'antitrabas , antilag' : false, descripcion: m.isGroup ? (chat.antiTraba ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Отправить автоматическое сообщение в случае задержки', showPrefix: true },
+{ comando: m.isGroup ? (chat.simi ? 'выкл ' : 'вкл ') + 'simi' : false, descripcion: m.isGroup ? (chat.simi ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'SimSimi ответит автоматически', showPrefix: true },
+{ comando: m.isGroup ? (chat.modoia ? 'выкл ' : 'вкл ') + 'ia' : false, descripcion: m.isGroup ? (chat.modoia ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Автоматический искусственный интеллект', showPrefix: true },
 
-{ comando: m.isGroup ? (chat.antilink ? 'off ' : 'on ') + 'antienlace , antilink' : false, descripcion: m.isGroup ? (chat.antilink ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de WhatsApp', showPrefix: true },
-{ comando: m.isGroup ? (chat.antilink2 ? 'off ' : 'on ') + 'antienlace2 , antilink2' : false, descripcion: m.isGroup ? (chat.antilink2 ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces que contenga \"https\"', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiTiktok ? 'off ' : 'on ') + 'antitiktok , antitk' : false, descripcion: m.isGroup ? (chat.antiTiktok ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de TikTok', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiYoutube ? 'off ' : 'on ') + 'antiyoutube , antiyt' : false, descripcion: m.isGroup ? (chat.antiYoutube ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de YouTube', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiTelegram ? 'off ' : 'on ') + 'antitelegram , antitg' : false, descripcion: m.isGroup ? (chat.antiTelegram ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de Telegram', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiFacebook ? 'off ' : 'on ') + 'antifacebook , antifb' : false, descripcion: m.isGroup ? (chat.antiFacebook ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de Facebook', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiInstagram ? 'off ' : 'on ') + 'antinstagram , antig' : false, descripcion: m.isGroup ? (chat.antiInstagram ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de Instagram', showPrefix: true },
-{ comando: m.isGroup ? (chat.antiTwitter ? 'off ' : 'on ') + 'antiX' : false, descripcion: m.isGroup ? (chat.antiTwitter ? '✅ ' + 'Activado || Activated' : '❌ ' + 'Desactivado || Disabled') : false, contexto: 'Eliminar enlaces de X (Twitter)', showPrefix: true },
+{ comando: m.isGroup ? (chat.antilink ? 'выкл ' : 'вкл ') + 'antienlace , antilink' : false, descripcion: m.isGroup ? (chat.antilink ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de WhatsApp', showPrefix: true },
+{ comando: m.isGroup ? (chat.antilink2 ? 'выкл ' : 'вкл ') + 'antienlace2 , antilink2' : false, descripcion: m.isGroup ? (chat.antilink2 ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces que contenga \"https\"', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiTiktok ? 'выкл ' : 'вкл ') + 'antitiktok , antitk' : false, descripcion: m.isGroup ? (chat.antiTiktok ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de TikTok', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiYoutube ? 'выкл ' : 'вкл ') + 'antiyoutube , antiyt' : false, descripcion: m.isGroup ? (chat.antiYoutube ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de YouTube', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiTelegram ? 'выкл ' : 'вкл ') + 'antitelegram , antitg' : false, descripcion: m.isGroup ? (chat.antiTelegram ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de Telegram', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiFacebook ? 'выкл ' : 'вкл ') + 'antifacebook , antifb' : false, descripcion: m.isGroup ? (chat.antiFacebook ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de Facebook', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiInstagram ? 'выкл ' : 'вкл ') + 'antinstagram , antig' : false, descripcion: m.isGroup ? (chat.antiInstagram ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de Instagram', showPrefix: true },
+{ comando: m.isGroup ? (chat.antiTwitter ? 'выкл ' : 'вкл ') + 'antiX' : false, descripcion: m.isGroup ? (chat.antiTwitter ? '✅ ' + 'включена' : '❌ ' + 'выключена') : false, contexto: 'Eliminar enlaces de X (Twitter)', showPrefix: true },
 ]
  
 try {
@@ -150,13 +150,10 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 
 ${margen}
 
-> 🌟 *INFORMACIÓN GENERAL* 🌟 
+> 🌟 *ОБЩАЯ ИНФОРМАЦИЯ* 🌟 
 
 *❰❰ ${lenguajeGB['smsTotalUsers']()} ❱❱* 
-➺ \`\`\`${Object.keys(global.db.data.users).length}\`\`\`
-
-*❰❰ Registrados ❱❱* 
-➺ \`\`\`${rtotalreg}/${totalreg}\`\`\`    
+➺ \`\`\`${Object.keys(global.db.data.users).length}\`\`\`   
 
 *❰❰ ${lenguajeGB['smsUptime']()} ❱❱* 
 ➺ \`\`\`${uptime}\`\`\`
@@ -175,56 +172,42 @@ ${margen}
 
 ${margen}
 
-> ✨ *INFORMACIÓN DEL USUARIO* ✨
+> ✨ *ИНФОРМАЦИЯ О ПОЛЬЗОВАТЕЛЕ* ✨
 
-*❰❰ Tipo de registro ❱❱*
+*❰❰ Тип записи ❱❱*
 ➺ ${user.registered === true ? `_${user.registroC === true ? '🗂️ Registro Completo' : '📑 Registro Rápido'}_` : '❌ _Sin registro_'}
 
-*❰❰ Mi estado ❱❱*
+*❰❰ Мое состояние ❱❱*
 ➺ ${typeof user.miestado !== 'string' ? '❌ *Establecer usando:* _' + usedPrefix + 'miestado_' : '_Me siento ' + user.miestado + '_'}
 
-*❰❰ Registrado ❱❱*
-➺ ${user.registered === true ? '✅ Verificado' : '❌ *Establecer registro usando:* _' + usedPrefix + 'verificar_'}
-
-*❰❰ ${lenguajeGB['smsBotonM7']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM7']().slice(1).toLowerCase()} ❱❱* 
-➺ ${user.premiumTime > 0 ? '✅ Eres usuario Premium' : '❌ *Establecer Premium:* _' + usedPrefix + 'pase premium_'}
-
-*❰❰ ${lenguajeGB['smsBotonM5']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM5']().slice(1).toLowerCase()} ❱❱* 
-➺ ${role}
-
-*❰❰ ${lenguajeGB['smsBotonM6']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM6']().slice(1).toLowerCase()} ❱❱*
+*❰❰ ${lenguajeGB['sms-ботон M6']().charAt(0).toUpperCase() + lenguajeGB['smsBotonM6']().slice(1).toLowerCase()} ❱❱*
 ➺ ${emoji} \`${user.exp - min}/${xp}\`
 
-*❰❰ ${lenguajeGB['smsPareja']()} ❱❱*
-➺ ${pareja ? `${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['smsResultPareja']()}`}
+*❰❰ ${lenguajeGB['sms-сообщение Pareja']()} ❱❱*
+➺ ${pareja ? `${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['результат отправки sms-сообщения']()}`}
 
 *❰❰ Pasatiempo(s) ❱❱* 
 ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 
 ${margen}
 
-> 💫 *INFORMACIÓN* 💫\n
+> 💫 *ИНФОРМАЦИЯ* 💫\n
 ${generateCommand(commandsInfo, usedPrefix)}
 
 ${margen}
 
-> 💻 *COMANDOS - SUB BOT*\n
+> 💻 *КОМАНДЫ-ВСПОМОГАТЕЛЬНЫЙ БОТ*\n
 ${generateCommand(commandsJadiBot, usedPrefix)}
 
 ${margen}
 
-> 🆘 *REPORTAR COMANDOS* 🆘\n
+> 🆘 *СООБЩАТЬ О КОМАНДАХ* 🆘\n
 ${generateCommand(commandsReport, usedPrefix)}
 
 ${margen}
 
-> 🪅 *GATABOT TEMPORAL* 🪅\n
+> 🪅 *ВРЕМЕННЫЙ ПИЗДЮК* 🪅\n
 ${generateCommand(commandsLink, usedPrefix)}
-
-${margen}
-
-> 🎟️ *SER PREMIUM* 🎟️\n
-${generateCommand(commandsPrem, usedPrefix)}
 
 ${margen}
 
@@ -240,7 +223,7 @@ ${margen}
 
 > ⚙️ *AJUSTES* ⚙️
 ${m.isGroup ? `_✅ ➤ Activado_
-_❌ ➤ Desactivado_` : `Para ver la configuración completa sólo use: *${usedPrefix}on* o *${usedPrefix}off*`}\n
+_❌ ➤ Desactivado_` : `Para ver la configuración completa sólo use: *${usedPrefix}вкл* o *${usedPrefix}выкл*`}\n
 ${generateCommand(commandsConfig, usedPrefix).replace(/≡/g, '𖡡')}
 
 ${margen}
@@ -323,7 +306,7 @@ ${margen}
 ✓ _${usedPrefix}setbye | despedida *texto*_
 ✓ _${usedPrefix}nuevoenlace | resetlink_
 ✓ _${usedPrefix}on_
-✓ _${usedPrefix}off_
+✓ _${usedPrefix}выкл_
 
 > 💞 *PAREJAS* 💞
 
@@ -509,7 +492,7 @@ ${margen}
 ✓ _${usedPrefix}cadahora | hourly_
 ✓ _${usedPrefix}cadasemana | semanal | weekly_
 ✓ _${usedPrefix}cadames | mes | monthly_
-✓ _${usedPrefix}cofre | abrircofre | coffer_
+✓ _${usedPrefix}cofre | abrircofre | cвыклer_
 ✓ _${usedPrefix}trabajar | work_
 
 > 🌟 *RPG Fnatasy* 🌟
@@ -607,8 +590,7 @@ console.log(e)}
 }
 
 //handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|menucompleto|allmenu|allm|m|\?)$/i
-handler.command = /^(menucompleto|allmenu|\?)$/i
-
+handler.command = /^(menucompleto|allmenu|меню|\?)$/i
 export default handler
 
 const more = String.fromCharCode(8206)
