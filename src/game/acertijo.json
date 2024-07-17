@@ -35,7 +35,7 @@
 {"question": "Tengo manos y una cara, pero no tengo cuerpo. ¿Qué soy?", "response": "Un reloj" },
 {"question": "Soy una cosa que es más útil cuando está rota. ¿Qué soy?", "response": "Un huevo" },
 {"question": "Soy un lugar donde puedes encontrar tesoros y libros, pero nunca encontrarás oro ni palabras. ¿Qué soy?", "response": "Una biblioteca" },
-{"question": "Si me nombras, me rompes. ¿Qué soy?", "response": "El silencio" },
+{"question": "Если ты назовешь меня по имени, ты меня сломаешь. Кто я такой?", "response": "El silencio" },
 {"question": "Soy un número sin fin, pero siempre empiezo con un 1. ¿Qué soy?", "response": "El número Pi" },
 {"question": "¿Qué le dice un ciego a otro ciego?", "response": "Después nos vemos"},
 {"question": "¿En qué se parece un alfiler a un policía?", "response": "En que los dos prenden" },

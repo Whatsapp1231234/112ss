@@ -211,30 +211,25 @@ ${generateCommand(commandsLink, usedPrefix)}
 
 ${margen}
 
-> 🎡 *JUEGOS* 🎡\n
-${generateCommand(commandsGames, usedPrefix)}
-
-${margen}
-
 > ✨ *IA* ✨\n
 ${generateCommand(commandsAI, usedPrefix)}
 
 ${margen}
 
-> ⚙️ *AJUSTES* ⚙️
-${m.isGroup ? `_✅ ➤ Activado_
-_❌ ➤ Desactivado_` : `Para ver la configuración completa sólo use: *${usedPrefix}вкл* o *${usedPrefix}выкл*`}\n
+> ⚙️ *АРМАТУРА* ⚙️
+${m.isGroup ? `_✅ ➤ Включен_
+_❌ ➤ Выключен_` : `Чтобы просмотреть полную конфигурацию, просто используйте: *${usedPrefix}вкл* o *${usedPrefix}выкл*`}\n
 ${generateCommand(commandsConfig, usedPrefix).replace(/≡/g, '𖡡')}
 
 ${margen}
 
-> 🧾 *AJUSTES/INFO - GRUPO* 🧾
+> 🧾 *НАСТРОЙКИ/ИНФОРМАЦИОННАЯ ГРУППА* 🧾
 
 ✓ _${usedPrefix}configuracion_
 ✓ _${usedPrefix}settings_
 ✓ _${usedPrefix}vergrupo_
 
-> 🪄 *DESCARGAS* 🪄
+> 🪄 *ЗАГРУЗКИ* 🪄
 
 ✓ _${usedPrefix}imagen | image *texto*_
 ✓ _${usedPrefix}pinterest | dlpinterest *texto*_
@@ -264,7 +259,7 @@ ${margen}
 ✓ _${usedPrefix}fraseromantica_
 ✓ _${usedPrefix}historia_
 ✓ _${usedPrefix}drive | dldrive *link*_
-> 👤 *CHAT ANONIMO* 👤
+> 👤 *АНОНИМНЫЙ ЧАТ* 👤
 
 ✓ _${usedPrefix}chatanonimo | anonimochat_
 ✓ _${usedPrefix}anonimoch_
@@ -272,7 +267,7 @@ ${margen}
 ✓ _${usedPrefix}next_
 ✓ _${usedPrefix}leave_
 
-> 🌐 *COMANDOS PARA GRUPOS* 🌐
+> 🌐 *КОМАНДЫ ДЛЯ ГРУПП* 🌐
 
 ✓ _${usedPrefix}add *numero*_
 ✓ _${usedPrefix}mute | unmute *@tag*_
