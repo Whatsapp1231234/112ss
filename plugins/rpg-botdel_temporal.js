@@ -7,13 +7,13 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (new Date() * 1 < global.db.data.chats[who].expired) global.db.data.chats[who].expired = false
     else global.db.data.chats[who].expired = false
     
-    let caption = `*Se eliminaron con éxito el vencimiento para este grupo*`
-    conn.sendButton(m.chat, caption, wm, null, [['𝙑𝙤𝙡𝙫𝙚𝙧 𝙖𝙡 𝙈𝙚𝙣𝙪́ | 𝘽𝙖𝙘𝙠 𝙩𝙤 𝙈𝙚𝙣𝙪 ☘️', `/menu`]], m)
+    let caption = `*Истечение срока действия для этой группы было успешно снято*`
+    conn.sendButton(m.chat, caption, wm, null, [['ОСНОВНОЕ МЕНЮ ☘️', `/меню`]], m)
     
 }
 handler.help = ['delexpired']
 handler.tags = ['owner']
-handler.command = /^(delbot|delbottemporal|delbotemporal)$/i
+handler.command = /^(удалитьАренду|delbottemporal|delbotemporal)$/i
 handler.owner = true
 handler.group = true
 

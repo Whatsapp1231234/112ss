@@ -85,7 +85,7 @@ user.fantasy_character5 = 0
 usuarioExistente = fantasyDB.find((user) => Object.keys(user)[0] === userId && user[userId].fantasy)
 if (usuarioExistente && user.fantasy_character === 0) {
 fake = { contextInfo: { externalAdReply: { title: `🌟 NUEVO LOGRO 🌟`, body: `Califica personajes, es gratis ❤️`, sourceUrl: accountsgb, thumbnailUrl: gataMenu }}}
-await conn.reply(m.chat, `\`\`\`Desafío desbloqueado 🔓\`\`\`\n\n*${conn.getName(userId)} ahora puedes calificar personajes*`, null, fake)
+await conn.reply(m.chat, `\`\`\`Разблокированный вызов 🔓\`\`\`\n\n*${conn.getName(userId)} ahora puedes calificar personajes*`, null, fake)
 user.fantasy_character++
 }
 
@@ -94,7 +94,7 @@ usuarioExistente = fantasyDB.find((user) => Object.keys(user)[0] === userId)
 if (usuarioExistente) {
 const fantasyArray = usuarioExistente[userId].fantasy
 fake = { contextInfo: { externalAdReply: { title: `🌟 RECOMPENSA 🌟`, body: `Usa #fymy para ver más desafíos`, sourceUrl: accountsgb, thumbnailUrl: gataMenu }}}
-logro = `\`\`\`Desafío desbloqueado 🔓\`\`\`\n\n*${conn.getName(userId)} recompensa por comprar ${fantasyArray.length} personajes*\n\n🌟 *Recompensas:* \`\`\`(X${user.fantasy_character2 + 1})\`\`\``
+logro = `\`\`\`Разблокированный вызов 🔓\`\`\`\n\n*${conn.getName(userId)} recompensa por comprar ${fantasyArray.length} personajes*\n\n🌟 *Recompensas:* \`\`\`(X${user.fantasy_character2 + 1})\`\`\``
 const conditionMet = [
 (fantasyArray.length >= 5 && typeof fantasyArray[4].id === 'string' && fantasyArray[4].status === true && user.fantasy_character2 === 0),
 (fantasyArray.length >= 10 && typeof fantasyArray[9].id === 'string' && fantasyArray[9].status === true && user.fantasy_character2 === 1),

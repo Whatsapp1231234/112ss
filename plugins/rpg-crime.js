@@ -32,10 +32,8 @@ console.log(e)}}
 handler.help = ['robar'];
 handler.tags = ['xp'];
 handler.command = /^(crime|Crime)$/i
-handler.register = true
 handler.group = true
 export default handler;
-
 function msToTime(duration) {
 var milliseconds = parseInt((duration % 1000) / 100),
 seconds = Math.floor((duration / 1000) % 60),
