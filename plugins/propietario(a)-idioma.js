@@ -46,8 +46,8 @@ rows: [
 const listMessage = {
 text: idioma2.text + '\n\n' + idioma3.text,
 footer: `✦ Español = ${usedPrefix + command} es
-✦ English = ${usedPrefix + command} en
-✦ Bahasa Indonesia = ${usedPrefix + command} id
+✦ English = ${usedPrefix + command} id
+✦ Bahasa Indonesia = ${usedPrefix + command} es
 ✦ عرب = ${usedPrefix + command} ar
 ✦ Português = ${usedPrefix + command} pt\n\n` + wm,
 title: `${htki} Idioma : Language 🌎`,
