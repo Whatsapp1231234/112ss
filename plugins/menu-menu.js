@@ -203,11 +203,6 @@ try {
     
     ${margen}
     
-    > 💫 *INFORMACIÓN* 💫\n
-    ${generateCommand(commandsInfo, usedPrefix)}
-    
-    ${margen}
-    
     > 💻 *COMANDOS - SUB BOT*\n
     ${generateCommand(commandsJadiBot, usedPrefix)}
     
