@@ -186,36 +186,6 @@ ${margen}
 *❰❰ ${lenguajeGB['sms-сообщение Pareja']()} ❱❱*
 ➺ ${pareja ? `${name} 💕 ${conn.getName(pareja)}` : `🛐 ${lenguajeGB['результат отправки sms-сообщения']()}`}
 
-*❰❰ Pasatiempo(s) ❱❱* 
-➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
-
-${margen}
-
-> 💫 *ИНФОРМАЦИЯ* 💫\n
-${generateCommand(commandsInfo, usedPrefix)}
-
-${margen}
-
-> 💻 *КОМАНДЫ-ВСПОМОГАТЕЛЬНЫЙ БОТ*\n
-${generateCommand(commandsJadiBot, usedPrefix)}
-
-${margen}
-
-> 🆘 *СООБЩАТЬ О КОМАНДАХ* 🆘\n
-${generateCommand(commandsReport, usedPrefix)}
-
-${margen}
-
-> 🪅 *ВРЕМЕННЫЙ ПИЗДЮК* 🪅\n
-${generateCommand(commandsLink, usedPrefix)}
-
-${margen}
-
-> ✨ *IA* ✨\n
-${generateCommand(commandsAI, usedPrefix)}
-
-${margen}
-
 > ⚙️ *АРМАТУРА* ⚙️
 ${m.isGroup ? `_✅ ➤ Включен_
 _❌ ➤ Выключен_` : `Чтобы просмотреть полную конфигурацию, просто используйте: *${usedPrefix}вкл* o *${usedPrefix}выкл*`}\n
